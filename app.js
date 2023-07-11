@@ -1,6 +1,5 @@
 const express = require('express');
 
-const app = express()
 const port = 3000
 const host = 'localhost';
 
@@ -8,6 +7,9 @@ const host = 'localhost';
 const notFound = require('./middlewares/404')
 const errorHandler = require('./middlewares/error')
 
+const app = express()
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 //routes
 const usersRoute = require('./routes/users');
