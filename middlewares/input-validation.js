@@ -4,7 +4,7 @@ module.exports = (validator) => async (req, res, next) => {
   try {
     console.log("HI.......")
     const validated = await validator.validateAsync(req.body);
-    console.log(validated)
+    //console.log(validated)
     req.body = validated;
     return next();
   } catch (err) {
