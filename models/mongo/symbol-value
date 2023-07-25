@@ -1,0 +1,14 @@
+const mongoose = require('mongoose');
+
+//the command - docker run --name mongodb -e 
+//              MONGO_INITDB_DATABASE=mymongo -d -p 27017:27017 mongo:latest
+//for docker to create new mongodb image
+const symbolValueSchema = new mongoose.Schema({
+    symbol: String,
+    value: String,
+    when: Date,
+});
+
+const SymbolValue = mongoose.model('SymbolValue', symbolValueSchema);
+
+module.exports = SymbolValue;

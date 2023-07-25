@@ -1,0 +1,29 @@
+# 1. At terminal run the command => docker compose up -d
+#    This command creates the mysql container
+# 2. Open Docker Desctop => At Containers tab choose the project => choose mysql => choose Terminal tab
+# 3. At terminal tipe [sh-4.4#] => mysql --user username --password mydb => then tipe the password ("password")
+# 4. Install mysql => npm i mysql2
+version: '3.8'
+
+volumes:
+  mysql_data:
+    driver: local
+
+services:
+  mysql:
+    image: mysql:latest
+    #volumes:
+    #  - mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: username
+      MYSQL_PASSWORD: password
+      MYSQL_TCP_PORT: 3306
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+    restart: unless-stopped
+    # volumes: 
+    #  - db:/var/lib/mysql

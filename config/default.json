@@ -1,0 +1,24 @@
+{
+    "app": {
+        "port": "3000"
+    },
+    "mysql": {
+        "host": "localhost",
+        "port": "3306",
+        "user": "username",
+        "password": "password",
+        "database": "mydb"
+    },
+    "worker": {
+        "interval": 5000
+    },
+    "mongo": {
+        "host": "127.0.0.1",
+        "port": "27017",
+        "database": "mymongo"
+    },
+    "github": {
+        "clientID": "9b3604d0e301dabb7cb0",
+        "clientSecret": "a8e901d6b73ec4c4653a414f6da51a6dc4029262"
+    }
+}
